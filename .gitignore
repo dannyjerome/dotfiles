@@ -1,0 +1,8 @@
+# Ignore system-specific or personal files
+*.swp        # Swap files (e.g., from Vim/Neovim)
+*.swo        # Backup files (e.g., from Vim/Neovim)
+*.bak        # Backup files
+.zsh_history # Zsh history
+.env         # Any environment variables file
+secrets/     # Any custom folder for sensitive data
+
