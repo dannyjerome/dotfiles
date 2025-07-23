@@ -59,6 +59,29 @@ alias ls='ls --color=auto'
 alias cl='clear'
 alias lf='ls -alSh'
 alias tls='tmux ls'
+# git aliases
+alias lx="ls -lXht --color=auto"
+alias pn="pnpm"
+alias g="git"
+alias ga="git add"
+alias gb="git branch"
+alias gc="git commit"
+alias gca="git commit -a"
+alias gcm="git commit -m"
+alias gd="git diff"
+alias gl="git log"
+alias gp="git push"
+alias gpl="git pull"
+alias gst="git status"
+alias gco="git checkout"
+alias gcl="git clone"
+alias gr="git remote"
+alias gmv="git mv"
+alias grb="git rebase"
+alias gmg="git merge"
+alias gsta="git stash"
+alias gpop="git stash pop"
+
 # Bind Alt + R to reload .zshrc
 bindkey '\er' reload_zshrc
 bindkey '^g' clear-screen

@@ -71,4 +71,3 @@ install_starship
 install_fzf
 
 echo "Setup completed! Please restart your terminal session."
-
