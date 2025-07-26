@@ -57,7 +57,7 @@ zle -N zle_reload_zshrc
 alias ls='ls --color=auto'
 #alias ll='ls -l'
 alias cl='clear'
-alias lf='ls -alSh'
+alias lf='ls -alh'
 alias tls='tmux ls'
 # git aliases
 alias lx="ls -lXht --color=auto"
