@@ -6,3 +6,4 @@
 .env         # Any environment variables file
 secrets/     # Any custom folder for sensitive data
 git/
+nvim/
