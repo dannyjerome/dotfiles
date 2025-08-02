@@ -36,22 +36,7 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 #eval "$(oh-my-posh init zsh)"
-
-#Functions
-# Function to reload .zshrc
-reload_zshrc() {
-    source ~/.zshrc
-    echo "screen cleared!"
-}
-
-# Zsh widget to reload .zshrc
-zle_reload_zshrc() {
-    reload_zshrc
-    zle reset-prompt  # This will reset the prompt after sourcing .zshrc
-}
-
-# Create a Zsh widget from the function
-zle -N zle_reload_zshrc
+export LS_COLORS="di=38;5;173:ln=36:so=35:pi=33:ex=38;5;30:bd=01;34:cd=01;34:su=37:sg=37:tw=30:ow=38;5;173:st=37:or=01;31"
 
 #Alias
 alias ls='ls --color=auto'
@@ -82,13 +67,26 @@ alias gmg="git merge"
 alias gsta="git stash"
 alias gpop="git stash pop"
 
-# Bind Alt + R to reload .zshrc
-bindkey '\er' reload_zshrc
+
+#Functions
+# Function to reload .zshrc
+reload_zshrc() {
+	clear
+	source ~/.zshrc
+	print -Pn "\e[1;32m✅ zsh config reloaded!\e[0m\n"
+	zle reset-prompt
+}
+
+# Create a Zsh widget from the function
+zle -N reload_zshrc
+# Bind Shift+Alt+g to reload .zshrc
+bindkey '^[G' reload_zshrc
 bindkey '^g' clear-screen
 # Start tmux automatically if it's not already running
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
     tmux attach || tmux new
 fi
+
 # Initialize Starship prompt
 eval "$(starship init zsh)"
 #eval $(dircolors -b ~/.dircolors)
